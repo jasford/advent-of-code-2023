@@ -37,7 +37,7 @@ const About = (): JSX.Element => {
                   </svg>
                 </div>
               </div>
-              <div className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500">December 1, 2023</div>
+              <div className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500">December {i + 1}, 2023</div>
             </article>
           ))}
         </div>
