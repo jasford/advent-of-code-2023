@@ -5,8 +5,8 @@ interface PuzzleDay {
 
 const puzzles: PuzzleDay[] = [
   {
-    headline: 'Elf-a-palooza',
-    summary: 'All set up and ready to go. Excited to see what kind of trouble the elves get into this year trying to save Christmas.',
+    headline: 'Trebuchet?!',
+    summary: "For day one we're parsing calibration code strings. I built a syntax highlighter to see how the parsing algorithm works interactively.",
   },
 ];
 
