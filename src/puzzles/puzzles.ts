@@ -12,6 +12,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Cube Conundrum',
     summary: 'Struggled to visualize this one. Ended up with some little retro-looking color cards to sort of show how the calculation works.',
   },
+  {
+    headline: 'Gear Ratios',
+    summary: 'For this one we get a giant SVG image showing color-coded data. Less interesting to look at, but was helpful in troubleshooting the solution code.',
+  },
 ];
 
 export default puzzles;
