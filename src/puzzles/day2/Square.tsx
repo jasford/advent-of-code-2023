@@ -12,7 +12,7 @@ const Square = ({ game, i }: { game: Game, i: number }): JSX.Element => {
   };
   const outlineColor = game.possible ? colors.slate[600] : colors.slate[300];
   return (
-    <svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 120 120">
+    <svg className="w-full h-full" preserveAspectRatio="xMinYMin meet" viewBox="0 0 120 120">
       <rect x="2" y="2" width="116" height="116" stroke={outlineColor} strokeWidth="4" fill="none" />
       {rgbs.map((key, i) => (
         <g key={i}>

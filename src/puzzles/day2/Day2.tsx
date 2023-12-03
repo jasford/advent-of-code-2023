@@ -22,7 +22,9 @@ const Day2 = (): JSX.Element => {
       </table>
       <div className="grid grid-cols-5 gap-2">
         {gameData.map((game, i) => (
-          <Square key={i} i={i} game={game} />
+          <div key={i} className="relative">
+            <Square i={i} game={game} />
+          </div>
         ))}
       </div>
     </DayPage>
