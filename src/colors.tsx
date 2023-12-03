@@ -22,6 +22,18 @@ const colors: Colors = {
   sky: {
     400: 'rgb(56 189 248)',
   },
+  red: {
+    100: '#fee2e2',
+    600: '#dc2626',
+  },
+  green: {
+    100: '#dcfce7',
+    600: '#16a34a',
+  },
+  blue: {
+    100: '#dbeafe',
+    600: '#2563eb',
+  }
 };
 
 export default colors;

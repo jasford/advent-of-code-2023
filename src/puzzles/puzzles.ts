@@ -10,7 +10,7 @@ const puzzles: PuzzleDay[] = [
   },
   {
     headline: 'Cube Conundrum',
-    summary: 'Working the puzzle.',
+    summary: 'Struggled to visualize this one. Ended up with some little retro-looking color cards to sort of show how the calculation works.',
   },
 ];
 

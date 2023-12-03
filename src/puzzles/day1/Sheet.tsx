@@ -8,7 +8,7 @@ const createCumulativeSummer = (sum: number) => (value: number) => {
 
 const Sheet = ({ advanced }: { advanced: boolean }): JSX.Element => {
   const cumulativeSum = createCumulativeSummer(0);
-  const list = inputData.map((line, i) => {
+  const list = inputData.map((line) => {
     const firstNum = getFirstNum(advanced)(line);
     const lastNum = getFirstNum(advanced)(line, true);
     const value = firstNum[0] * 10 + lastNum[0];
