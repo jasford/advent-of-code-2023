@@ -1,49 +1,14 @@
 import React, { useState } from 'react';
 import Editor from 'react-simple-code-editor';
 import Toggle from '../../components/Toggle';
-import CalibrationCode from './CalibrationCode';
-import { getNum, getFirstNum, answers } from './calculations';
+import { getFirstNum, answers } from './calculations';
+import lineHighlighter from './lineHighlighter';
 
-const lineHighlighter = ({ advanced, firstIndex, lastIndex }: {
+const LineEditor = ({ advanced, setAdvanced }: {
   advanced: boolean
-  firstIndex: number
-  lastIndex: number
-}) => {
-  // eslint-disable-next-line react/display-name
-  return (line: string): JSX.Element => {
-    if (line.length === 0) return <> </>;
-    const spans: Array<{ key: string, el: JSX.Element }> = [];
-    let cursor = 0;
-    while (cursor < line.length) {
-      const num = getNum(line.slice(cursor), advanced);
-      if (num === null) {
-        spans.push({ key: `${cursor}`, el: <span className="text-gray-300">{line[cursor]}</span> });
-      } else {
-        const color = cursor === firstIndex
-          ? 'text-teal-600 font-bold'
-          : cursor === lastIndex
-            ? 'text-pink-600 font-bold'
-            : 'text-yellow-400';
-        const el = (num === null)
-          ? <span className="text-gray-300">{line[cursor]}</span>
-          : <span className={color}>{num[1]}</span>;
-        spans.push({ key: `${cursor}`, el });
-      }
-      cursor += (num === null) ? 1 : num[1].length;
-    }
-    return (
-      <>
-        {spans.map(({ el, key }) => (
-          <React.Fragment key={key}>{el}</React.Fragment>
-        ))}
-      </>
-    );
-  };
-};
-
-const LineEditor = (): JSX.Element => {
+  setAdvanced: React.Dispatch<React.SetStateAction<boolean>>
+}): JSX.Element => {
   const [line, setLine] = useState('sixrc8tqxd4pkxpfdtwokglvthreenine47rthreezs');
-  const [advanced, setAdvanced] = useState(false);
   const firstNum = getFirstNum(advanced)(line);
   const lastNum = getFirstNum(advanced)(line, true);
   return (
@@ -66,7 +31,13 @@ const LineEditor = (): JSX.Element => {
             }}
           />
         </div>
-        <CalibrationCode code={`${firstNum[0]}${lastNum[0]}`} />
+        <div className="grid grid-cols-2 divide-x outline outline-1 outline-slate-600 my-px w-12 text-xs font-bold flex ">
+          {[firstNum, lastNum].map(([i]) => (
+            <div key={i} className={`flex items-center justify-center ${i === 0 ? 'text-teal-600' : 'text-pink-600'}`}>
+              {i ?? ''}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="flex">
         <div className="mt-4">

@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import DayPage from '../../components/DayPage';
 import LineEditor from './LineEditor';
+import Sheet from './Sheet';
 
 const Day1 = (): JSX.Element => {
+  const [advanced, setAdvanced] = useState(false);
+
   return (
     <DayPage day={1}>
       <p>
@@ -14,7 +18,8 @@ const Day1 = (): JSX.Element => {
         two, we also need to take into account spelled out digits like "one",
         "two", etc. The toggle switch turns on advanced parsing for part two.
       </p>
-      <LineEditor />
+      <LineEditor advanced={advanced} setAdvanced={setAdvanced} />
+      <Sheet advanced={advanced} />
     </DayPage>
   );
 };

@@ -39,9 +39,15 @@ export const getFirstNum = (
   return [0, null];
 };
 
+export const processLine = (advanced: boolean) => (line: string): number => {
+  const fn = getFirstNum(advanced);
+  return fn(line)[0] * 10 + fn(line, true)[0];
+};
+
+export const inputData = inputRaw.split('\n').filter(s => s.length > 0);
+
 export const answers = [getFirstNum(false), getFirstNum(true)].map(
-  fn => inputRaw.split('\n')
-    .filter(s => s.length > 0)
+  fn => inputData
     .map(s => fn(s)[0] * 10 + fn(s, true)[0])
     .reduce((s, v) => s + v, 0),
 );
