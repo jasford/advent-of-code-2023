@@ -25,10 +25,12 @@ const DayPage = ({ day, children }: React.PropsWithChildren<{ day: number }>): J
           </button>
         )}
         <div className="flex items-center text-base text-zinc-400">
-          <span className="h-4 w-0.5 rounded-full bg-zinc-200" />
-          <span className="ml-3">December {day}, 2023</span>
+          <span className="h-4 w-0.5 rounded-full bg-zinc-200 hidden lg:block" />
+          <span className="lg:ml-3">December {day}, 2023</span>
         </div>
-        {nextDay !== null && (
+        {nextDay == null
+          ? <div className="w-10" />
+          : (
           <button
               type="button"
               onClick={nextDay}
@@ -37,7 +39,7 @@ const DayPage = ({ day, children }: React.PropsWithChildren<{ day: number }>): J
             >
               <ArrowRightIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700" />
           </button>
-        )}
+            )}
       </div>
       <h1 className="text-3xl mb-6 md:text-4xl lg:text-5xl pt-6 pb-2 font-extrabold">
         {puzzleList[day - 1]?.headline ?? `Day ${day}`}

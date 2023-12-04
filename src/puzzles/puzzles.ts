@@ -16,6 +16,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Gear Ratios',
     summary: 'For this one we get a giant SVG image showing color-coded data. Less interesting to look at, but was helpful in troubleshooting the solution code.',
   },
+  {
+    headline: 'Scratchcards',
+    summary: 'Finally a data set that lends itself to some nice graphing! The output is an exponential growth curve that seems to collapse to zero every so often.',
+  },
 ];
 
 export default puzzles;
