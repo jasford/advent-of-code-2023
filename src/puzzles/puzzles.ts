@@ -20,6 +20,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Scratchcards',
     summary: 'Finally a data set that lends itself to some nice graphing! The output is an exponential growth curve that seems to collapse to zero every so often.',
   },
+  {
+    headline: 'Give A Seed A Fertilizer',
+    summary: 'Pretty ugly for now.',
+  },
 ];
 
 export default puzzles;

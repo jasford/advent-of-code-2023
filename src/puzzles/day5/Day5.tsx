@@ -1,8 +1,8 @@
 import DayPage from '../../components/DayPage';
-import { inputData } from './calculations';
+import { lowestSeedLocation2 } from './calculations';
 
 const Day5 = (): JSX.Element => {
-  console.log(inputData);
+  console.log(lowestSeedLocation2);
   return (
     <DayPage day={5}>
       <p>
