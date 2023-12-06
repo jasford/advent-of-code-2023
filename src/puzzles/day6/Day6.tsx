@@ -1,22 +1,21 @@
 import DayPage from '../../components/DayPage';
-import { inputData } from './calculations';
+import { p1, p2 } from './calculations';
 
 const Day6 = (): JSX.Element => {
-  console.log(inputData);
   return (
     <DayPage day={6}>
       <p>
-        Let's do this.
+        This one was so much easier than the prior days! And it should be fun to visualize as well.
       </p>
       <table className="mb-20">
         <tbody>
           <tr>
-            <td><strong>Part 1:</strong> where we do something less intense</td>
-            <td>1234</td>
+            <td><strong>Part 1:</strong> a few smaller races, with the score multiplied together</td>
+            <td>{p1}</td>
           </tr>
           <tr>
-            <td><strong>Part 2:</strong> things get a little more serious</td>
-            <td>5678</td>
+            <td><strong>Part 2:</strong> one big long race</td>
+            <td>{p2}</td>
           </tr>
         </tbody>
       </table>

@@ -12,7 +12,7 @@ const About = (): JSX.Element => {
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </div>
       <div>
-        <div className="flex max-w-3xl flex-col space-y-16">
+        <div className="flex max-w-3xl flex-col space-y-16 mb-24">
           {puzzleList.map(({ headline, summary }, i) => (
             <article key={i} className="md:grid md:grid-cols-4 md:items-baseline">
               <div className="md:col-span-3 group relative flex flex-col items-start">

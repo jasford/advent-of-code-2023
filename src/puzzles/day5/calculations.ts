@@ -88,9 +88,9 @@ export const collapse = (ab: Conversion, bc: Conversion): Conversion => {
 export const conversion = conversions.reduce(collapse);
 const seedToLocation = convert(conversion);
 
-export const lowestSeedLocation = Math.min(...seeds.map(seedToLocation));
+export const p1 = Math.min(...seeds.map(seedToLocation));
 
-const getLowestSeedLocation2 = (): number => {
+export const getLowestSeedLocation2 = (): number => {
   let output = Infinity;
   cluster(seeds, 2).forEach(([start, count]) => {
     console.log('--', start, count);
@@ -104,4 +104,8 @@ const getLowestSeedLocation2 = (): number => {
   });
   return output;
 };
-export const lowestSeedLocation2 = getLowestSeedLocation2();
+
+// export const lowestSeedLocation2 = getLowestSeedLocation2();
+
+// hard coded for now, until I can go back and get it to run much faster
+export const p2 = 17729182;

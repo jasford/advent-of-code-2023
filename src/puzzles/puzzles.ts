@@ -22,7 +22,11 @@ const puzzles: PuzzleDay[] = [
   },
   {
     headline: 'Give A Seed A Fertilizer',
-    summary: 'Pretty ugly for now.',
+    summary: 'Just barely go this one done. No visualization yet. Hopefully I can come back to this one. I have some ideas.',
+  },
+  {
+    headline: 'Wait for it',
+    summary: 'An easier puzzle, and an opportunity to use a slider bar and do a little algebraic graphing!',
   },
 ];
 
