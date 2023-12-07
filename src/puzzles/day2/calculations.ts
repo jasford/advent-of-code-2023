@@ -1,3 +1,4 @@
+import { memo } from 'radash';
 import inputRaw from './input.txt?raw';
 
 export interface GameSet {
@@ -54,18 +55,19 @@ const cubePower = (game: GameSet): number => (
   game.red * game.green * game.blue
 );
 
-export const gameData: Game[] = inputData.map((sets) => {
-  const mins = maxSet(sets);
+export const getSolutions = memo(() => {
+  const gameData: Game[] = inputData.map((sets) => {
+    const mins = maxSet(sets);
+    return {
+      data: sets,
+      possible: gameIsPossible({ red: 12, green: 13, blue: 14 })(sets),
+      mins,
+      cubePower: cubePower(mins),
+    };
+  });
   return {
-    data: sets,
-    possible: gameIsPossible({ red: 12, green: 13, blue: 14 })(sets),
-    mins,
-    cubePower: cubePower(mins),
+    p1: gameData.reduce((sum, { possible }, i) => possible ? sum + i + 1 : sum, 0),
+    p2: gameData.reduce((sum, { cubePower }) => sum + cubePower, 0),
+    gameData,
   };
 });
-
-export const solution2 = gameData
-  .reduce((sum, { cubePower }) => sum + cubePower, 0);
-
-export const solution1 = gameData
-  .reduce((sum, { possible }, i) => possible ? sum + i + 1 : sum, 0);

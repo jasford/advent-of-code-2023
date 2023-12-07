@@ -6,22 +6,23 @@ export interface Race {
   dist: number
 }
 
-export const getSolutions = memo(() => {
-  const p1Data = (): Race[] => {
-    const [times, distances] = inputRaw.trim().split('\n').map(l => l.split(':')[1].trim().split(/[\s]+/).map(v => parseInt(v)));
-    return times.map((time, i) => ({
+export const parseData = memo((): { p1Data: Race[], p2Data: Race } => {
+  const [times, distances] = inputRaw.trim().split('\n').map(l => l.split(':')[1].trim().split(/[\s]+/).map(v => parseInt(v)));
+  const [time, dist] = inputRaw.trim().split('\n').map(l => l.split(':')[1].replace(/\s/g, '')).map(v => parseInt(v));
+  return {
+    p1Data: times.map((time, i) => ({
       time,
       dist: distances[i],
-    }));
-  };
-
-  const p2Data: Race = (() => {
-    const [time, dist] = inputRaw.trim().split('\n').map(l => l.split(':')[1].replace(/\s/g, '')).map(v => parseInt(v));
-    return {
+    })),
+    p2Data: {
       time,
       dist,
-    };
-  })();
+    },
+  };
+});
+
+export const getSolutions = memo(() => {
+  const { p1Data, p2Data } = parseData();
 
   const possibilities = (race: Race): number => {
     let count = 0;
@@ -34,8 +35,7 @@ export const getSolutions = memo(() => {
   };
 
   return {
-    p1: p1Data().map(possibilities).reduce((a, b) => a * b, 1),
+    p1: p1Data.map(possibilities).reduce((a, b) => a * b, 1),
     p2: possibilities(p2Data),
-    p2Data,
   };
 });

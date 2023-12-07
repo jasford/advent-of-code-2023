@@ -1,7 +1,8 @@
 import DayPage from '../../components/DayPage';
-import { p1, p2 } from './calculations';
+import { getSolutions } from './calculations';
 
 const Day5 = (): JSX.Element => {
+  const { p1, p2 } = getSolutions();
   return (
     <DayPage day={5}>
       <p>

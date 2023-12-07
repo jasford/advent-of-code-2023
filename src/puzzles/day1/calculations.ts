@@ -1,3 +1,4 @@
+import { memo } from 'radash';
 import inputRaw from './input.txt?raw';
 
 const digitStrings = [
@@ -44,10 +45,14 @@ export const processLine = (advanced: boolean) => (line: string): number => {
   return fn(line)[0] * 10 + fn(line, true)[0];
 };
 
-export const inputData = inputRaw.split('\n').filter(s => s.length > 0);
+export const getSolutions = memo(() => {
+  const inputData = inputRaw.split('\n').filter(s => s.length > 0);
 
-export const answers = [getFirstNum(false), getFirstNum(true)].map(
-  fn => inputData
-    .map(s => fn(s)[0] * 10 + fn(s, true)[0])
-    .reduce((s, v) => s + v, 0),
-);
+  const answers = [getFirstNum(false), getFirstNum(true)].map(
+    fn => inputData
+      .map(s => fn(s)[0] * 10 + fn(s, true)[0])
+      .reduce((s, v) => s + v, 0),
+  );
+
+  return { inputData, p1: answers[0], p2: answers[1] };
+});

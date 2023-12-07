@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import colors from '../../colors';
-import { cardCopies, winCounts } from './calculations';
+import { getData } from './calculations';
 import Toggle from '../../components/Toggle';
 
 const Chart = (): JSX.Element => {
   const svgRef = useRef(null);
+  const { winCounts, cardCopies } = getData();
 
   const [logScale, setLogScale] = useState(true);
 

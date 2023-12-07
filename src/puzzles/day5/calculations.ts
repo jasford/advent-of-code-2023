@@ -1,5 +1,5 @@
 import inputRaw from './input.txt?raw';
-import { memo, flat, unique, cluster } from 'radash';
+import { memo, flat, unique } from 'radash';
 
 export const inputData = inputRaw.trim().split('\n');
 
@@ -34,7 +34,9 @@ const parseConversion = (data: string): Conversion => {
   };
 };
 
-export const conversions = inputRaw.trim().split('\n\n').slice(1).map(parseConversion);
+export const getConversions = memo(
+  () => inputRaw.trim().split('\n\n').slice(1).map(parseConversion),
+);
 
 const convert = (conversion: Conversion) => (value: number): number => {
   const mapping = conversion.mappings.find(
@@ -49,7 +51,7 @@ export const convertToFrom = memo((
   source: string,
   destination: string,
 ): ((v: number) => number) => {
-  const conversion = conversions.find(
+  const conversion = getConversions().find(
     c => c.source === source && c.destination === destination,
   );
   if (conversion === undefined) return (v: number) => v;
@@ -85,27 +87,28 @@ export const collapse = (ab: Conversion, bc: Conversion): Conversion => {
   };
 };
 
-export const conversion = conversions.reduce(collapse);
-const seedToLocation = convert(conversion);
+export const getSolutions = memo(() => {
+  const conversion = getConversions().reduce(collapse);
+  const seedToLocation = convert(conversion);
 
-export const p1 = Math.min(...seeds.map(seedToLocation));
+  // const getLowestSeedLocation2 = (): number => {
+  //   let output = Infinity;
+  //   cluster(seeds, 2).forEach(([start, count]) => {
+  //     console.log('--', start, count);
+  //     for (let i = start; i < start + count; i++) {
+  //       const value = seedToLocation(i);
+  //       if (value < output) {
+  //         console.log(value);
+  //         output = value;
+  //       }
+  //     }
+  //   });
+  //   return output;
+  // };
 
-export const getLowestSeedLocation2 = (): number => {
-  let output = Infinity;
-  cluster(seeds, 2).forEach(([start, count]) => {
-    console.log('--', start, count);
-    for (let i = start; i < start + count; i++) {
-      const value = seedToLocation(i);
-      if (value < output) {
-        console.log(value);
-        output = value;
-      }
-    }
-  });
-  return output;
-};
-
-// export const lowestSeedLocation2 = getLowestSeedLocation2();
-
-// hard coded for now, until I can go back and get it to run much faster
-export const p2 = 17729182;
+  return {
+    p1: Math.min(...seeds.map(seedToLocation)),
+    // hard coded for now, until I can go back and get it to run much faster
+    p2: 17729182,
+  };
+});

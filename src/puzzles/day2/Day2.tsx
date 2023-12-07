@@ -1,8 +1,9 @@
 import DayPage from '../../components/DayPage';
-import { solution1, solution2, gameData } from './calculations';
+import { getSolutions } from './calculations';
 import Square from './Square';
 
 const Day2 = (): JSX.Element => {
+  const { p1, p2, gameData } = getSolutions();
   return (
     <DayPage day={2}>
       <p>
@@ -12,11 +13,11 @@ const Day2 = (): JSX.Element => {
         <tbody>
           <tr>
             <td><strong>Part 1:</strong> sum of possible indexes</td>
-            <td>{solution1}</td>
+            <td>{p1}</td>
           </tr>
           <tr>
             <td><strong>Part 2:</strong> sum of powers</td>
-            <td>{solution2}</td>
+            <td>{p2}</td>
           </tr>
         </tbody>
       </table>

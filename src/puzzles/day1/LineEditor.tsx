@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Editor from 'react-simple-code-editor';
 import Toggle from '../../components/Toggle';
-import { getFirstNum, answers } from './calculations';
+import { getFirstNum, getSolutions } from './calculations';
 import lineHighlighter from './lineHighlighter';
 
 const LineEditor = ({ advanced, setAdvanced }: {
   advanced: boolean
   setAdvanced: React.Dispatch<React.SetStateAction<boolean>>
 }): JSX.Element => {
+  const { p1, p2 } = getSolutions();
+  const answers = [p1, p2];
   const [line, setLine] = useState('sixrc8tqxd4pkxpfdtwokglvthreenine47rthreezs');
   const firstNum = getFirstNum(advanced)(line);
   const lastNum = getFirstNum(advanced)(line, true);

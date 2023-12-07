@@ -1,4 +1,4 @@
-import { getFirstNum, inputData } from './calculations';
+import { getFirstNum, getSolutions } from './calculations';
 import lineHighlighter from './lineHighlighter';
 
 const createCumulativeSummer = (sum: number) => (value: number) => {
@@ -8,6 +8,7 @@ const createCumulativeSummer = (sum: number) => (value: number) => {
 
 const Sheet = ({ advanced }: { advanced: boolean }): JSX.Element => {
   const cumulativeSum = createCumulativeSummer(0);
+  const { inputData } = getSolutions();
   const list = inputData.map((line) => {
     const firstNum = getFirstNum(advanced)(line);
     const lastNum = getFirstNum(advanced)(line, true);
