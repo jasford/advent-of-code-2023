@@ -44,6 +44,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Pipe Maze',
     summary: 'A giant pipe loop with a gazillion bends in it. I managed to make an SVG to show the pipe loop and highlight the open space fully contained by the loop.',
   },
+  {
+    headline: 'Cosmic Expansion',
+    summary: 'This one uses taxi cab distances with a fun concept of stars in an expanding universe. Lots going on today and no time to make a visualization.',
+  },
 ];
 
 export default puzzles;

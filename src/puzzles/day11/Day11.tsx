@@ -1,22 +1,22 @@
 import DayPage from '../../components/DayPage';
-import { inputData } from './calculations';
+import { getSolutions } from './calculations';
 
 const Day11 = (): JSX.Element => {
-  console.log(inputData);
+  const { p1, p2 } = getSolutions();
   return (
     <DayPage day={11}>
       <p>
-        Let's do this.
+        This one uses <a target="_blank" href="https://en.wikipedia.org/wiki/Taxicab_geometry" rel="noreferrer">taxi distances</a> to sum up the distance between each unique pair of stars in the input data. No visualization for today.
       </p>
       <table className="mb-20">
         <tbody>
           <tr>
-            <td><strong>Part 1:</strong> where we do something less intense</td>
-            <td>1234</td>
+            <td><strong>Part 1:</strong> Sum of star distances with expansion of 1</td>
+            <td>{p1}</td>
           </tr>
           <tr>
-            <td><strong>Part 2:</strong> things get a little more serious</td>
-            <td>5678</td>
+            <td><strong>Part 2:</strong> Sum of star distances with expansion of 1M</td>
+            <td>{p2}</td>
           </tr>
         </tbody>
       </table>
