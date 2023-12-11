@@ -25,8 +25,24 @@ const puzzles: PuzzleDay[] = [
     summary: 'Just barely go this one done. No visualization yet. Hopefully I can come back to this one. I have some ideas.',
   },
   {
-    headline: 'Wait for it',
+    headline: 'Wait For It',
     summary: 'An easier puzzle, and an opportunity to use a slider bar and do a little algebraic graphing!',
+  },
+  {
+    headline: 'Camel Cards',
+    summary: 'A simplified version of poker, sorting hands based on scoring rules. Didn\'t have time to make a visualization.',
+  },
+  {
+    headline: 'Haunted Wasteland',
+    summary: 'A branching graph of nodes with left and right edges. No visualization today.',
+  },
+  {
+    headline: 'Mirage Maintenance',
+    summary: 'Derivatives of number sequences to predict the next (and previous) number. No visualization for this one either.',
+  },
+  {
+    headline: 'Pipe Maze',
+    summary: 'A giant pipe loop with a gazillion bends in it. I managed to make an SVG to show the pipe loop and highlight the open space fully contained by the loop.',
   },
 ];
 
