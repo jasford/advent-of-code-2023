@@ -48,6 +48,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Cosmic Expansion',
     summary: 'This one uses taxi cab distances with a fun concept of stars in an expanding universe. Lots going on today and no time to make a visualization.',
   },
+  {
+    headline: 'Hot Springs',
+    summary: 'I struggled with this one. First day I had to look at a solution someone else wrote to see how to get this to perform better.',
+  },
 ];
 
 export default puzzles;
