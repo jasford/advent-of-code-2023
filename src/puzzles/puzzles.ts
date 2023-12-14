@@ -52,6 +52,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Hot Springs',
     summary: 'I struggled with this one. First day I had to look at a solution someone else wrote to see how to get this to perform better.',
   },
+  {
+    headline: 'Point of Incidence',
+    summary: 'This one was easier (thankfully), but I was a day behind. Haven\'t had time to make a visualization in a while.',
+  },
 ];
 
 export default puzzles;
