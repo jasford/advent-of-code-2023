@@ -56,6 +56,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Point of Incidence',
     summary: 'This one was easier (thankfully), but I was a day behind. Haven\'t had time to make a visualization in a while.',
   },
+  {
+    headline: 'Parabolic Reflector Dish',
+    summary: 'Moving rocks on a dish by tilting it - I made a little d-pad with keyboard controls for this one.',
+  },
 ];
 
 export default puzzles;
