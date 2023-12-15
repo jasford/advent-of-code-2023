@@ -1,8 +1,8 @@
 import DayPage from '../../components/DayPage';
-import { inputData } from './calculations';
+import { getSolutions } from './calculations';
 
 const Day24 = (): JSX.Element => {
-  console.log(inputData);
+  const { p1, p2 } = getSolutions();
   return (
     <DayPage day={24}>
       <p>
@@ -11,12 +11,12 @@ const Day24 = (): JSX.Element => {
       <table className="mb-20">
         <tbody>
           <tr>
-            <td><strong>Part 1:</strong> where we do something less intense</td>
-            <td>1234</td>
+            <td><strong>Part 1:</strong></td>
+            <td>{p1}</td>
           </tr>
           <tr>
-            <td><strong>Part 2:</strong> things get a little more serious</td>
-            <td>5678</td>
+            <td><strong>Part 2:</strong></td>
+            <td>{p2}</td>
           </tr>
         </tbody>
       </table>
