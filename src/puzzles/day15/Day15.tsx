@@ -1,22 +1,22 @@
 import DayPage from '../../components/DayPage';
-import { inputData } from './calculations';
+import { getSolutions } from './calculations';
 
 const Day15 = (): JSX.Element => {
-  console.log(inputData);
+  const { p1, p2 } = getSolutions();
   return (
     <DayPage day={15}>
       <p>
-        Let's do this.
+        This one was relatively easy for me and lent itself well to functional composition.
       </p>
       <table className="mb-20">
         <tbody>
           <tr>
-            <td><strong>Part 1:</strong> where we do something less intense</td>
-            <td>1234</td>
+            <td><strong>Part 1:</strong> get the hash function working</td>
+            <td>{p1}</td>
           </tr>
           <tr>
-            <td><strong>Part 2:</strong> things get a little more serious</td>
-            <td>5678</td>
+            <td><strong>Part 2:</strong> do a series of steps to align lenses</td>
+            <td>{p2}</td>
           </tr>
         </tbody>
       </table>

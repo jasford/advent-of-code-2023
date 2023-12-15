@@ -60,6 +60,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Parabolic Reflector Dish',
     summary: 'Moving rocks on a dish by tilting it - I made a little d-pad with keyboard controls for this one.',
   },
+  {
+    headline: 'Lens Library',
+    summary: 'A simple hash function and series of steps to align the lenses. This one was fast and easy for me, but I did\'t make a visualization.',
+  },
 ];
 
 export default puzzles;
