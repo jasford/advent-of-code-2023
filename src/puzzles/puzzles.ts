@@ -64,6 +64,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Lens Library',
     summary: 'A simple hash function and series of steps to align the lenses. This one was fast and easy for me, but I did\'t make a visualization.',
   },
+  {
+    headline: 'The Floor Will Be Lava',
+    summary: 'A beam of light bouncing off an array of angled mirrors. This was fun to visualize. May revisit to add an animation.',
+  },
 ];
 
 export default puzzles;
