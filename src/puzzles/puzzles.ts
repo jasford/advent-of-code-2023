@@ -72,6 +72,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Clumsy Crucible',
     summary: 'Pathfinding with min/max movement limits. I used Djikstra\'s Algorithm and made a simple heatmap visualization with the solution paths overlayed.',
   },
+  {
+    headline: 'Lavaduct Lagoon',
+    summary: 'Calculating the area of a trench based on coordinates. This would lend itself well to visualization, but I\'m a couple days behind...',
+  },
 ];
 
 export default puzzles;
