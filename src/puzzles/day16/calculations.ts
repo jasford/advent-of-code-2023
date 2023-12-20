@@ -9,8 +9,6 @@ export enum Cell {
   SplitterV,
 }
 
-export enum Dir { L, R, U, D }
-
 export interface Pos { x: number, y: number }
 
 export const posEq = (p1: Pos) => (p2: Pos): boolean => p1.x === p2.x && p1.y === p2.y;

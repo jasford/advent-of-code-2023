@@ -68,6 +68,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'The Floor Will Be Lava',
     summary: 'A beam of light bouncing off an array of angled mirrors. This was fun to visualize. May revisit to add an animation.',
   },
+  {
+    headline: 'Clumsy Crucible',
+    summary: 'Pathfinding with min/max movement limits. I used Djikstra\'s Algorithm and made a simple heatmap visualization with the solution paths overlayed.',
+  },
 ];
 
 export default puzzles;
