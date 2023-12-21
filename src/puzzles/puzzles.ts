@@ -76,6 +76,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Lavaduct Lagoon',
     summary: 'Calculating the area of a trench based on coordinates. This would lend itself well to visualization, but I\'m a couple days behind...',
   },
+  {
+    headline: 'Aplenty',
+    summary: 'Chaining workflow rules together to calculate if specific parts are acceptable or not. No visualization today. Just big giant solution numbers.',
+  },
 ];
 
 export default puzzles;
