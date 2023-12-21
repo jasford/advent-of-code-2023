@@ -73,7 +73,6 @@ const count = memo((row: Row): number => {
     // since we know the start of our springs list is the first
     // group, we can remove it and count the possible solutions with
     // that group (and the springs for it) taken out.
-    // console.log('f');
     return count({
       springs: row.springs.slice(val + 1),
       rollup: row.rollup.slice(1),
@@ -82,7 +81,6 @@ const count = memo((row: Row): number => {
 
   // at this point we know the first spring is Unknown, so we add up the
   // counts with it being removed (since On at the start is removed) and Broken
-  // console.log('g');
   return (
     count({ ...row, springs: row.springs.slice(1) }) +
     count({ ...row, springs: [Spring.Broken, ...row.springs.slice(1)] })

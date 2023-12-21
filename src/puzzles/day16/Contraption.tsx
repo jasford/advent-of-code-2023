@@ -27,7 +27,6 @@ const Contraption = ({ grid, beam }: {
         );
       }))}
       {beam.map(({ pos, dir }, i) => {
-        // if (Math.abs(b.x - a.x) + Math.abs(b.y - a.y) > 1) console.log(a, b);
         return (
           <line
             key={i}

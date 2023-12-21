@@ -91,21 +91,6 @@ export const getSolutions = memo(() => {
   const conversion = getConversions().reduce(collapse);
   const seedToLocation = convert(conversion);
 
-  // const getLowestSeedLocation2 = (): number => {
-  //   let output = Infinity;
-  //   cluster(seeds, 2).forEach(([start, count]) => {
-  //     console.log('--', start, count);
-  //     for (let i = start; i < start + count; i++) {
-  //       const value = seedToLocation(i);
-  //       if (value < output) {
-  //         console.log(value);
-  //         output = value;
-  //       }
-  //     }
-  //   });
-  //   return output;
-  // };
-
   return {
     p1: Math.min(...seeds.map(seedToLocation)),
     // hard coded for now, until I can go back and get it to run much faster
