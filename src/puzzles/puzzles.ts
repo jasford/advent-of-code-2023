@@ -80,6 +80,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Aplenty',
     summary: 'Chaining workflow rules together to calculate if specific parts are acceptable or not. No visualization today. Just big giant solution numbers.',
   },
+  {
+    headline: 'Pulse Propogation',
+    summary: 'Super fun state machine sending pulses between a network of modules. Seems pretty hard to visualize but maybe worth revisiting.',
+  },
 ];
 
 export default puzzles;
