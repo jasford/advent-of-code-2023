@@ -6,7 +6,7 @@ const Day21 = (): JSX.Element => {
   return (
     <DayPage day={21}>
       <p>
-        Let's do this.
+        Well I did not like this one at all. Part 1 was super easy and part 2 was WAY beyond me. I understand the code I wrote, and the idea of using Lagrange to calculate a quadratic, but I would NEVER have come up with this approach on my own. Had to resort to Redit to get the idea.
       </p>
       <table className="mb-20">
         <tbody>

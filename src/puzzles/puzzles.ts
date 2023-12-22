@@ -84,6 +84,10 @@ const puzzles: PuzzleDay[] = [
     headline: 'Pulse Propogation',
     summary: 'Super fun state machine sending pulses between a network of modules. Seems pretty hard to visualize but maybe worth revisiting.',
   },
+  {
+    headline: 'Step Counter',
+    summary: 'Had to use a quadratic extrapolation to solve for part 2 on this one, which I would have never thought of on my own.',
+  },
 ];
 
 export default puzzles;
